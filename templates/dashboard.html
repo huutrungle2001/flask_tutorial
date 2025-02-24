@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dance Group Dashboard</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+    <body class="bg-gray-100">
+
+        <!-- Sidebar -->
+        <div class="flex h-screen">
+            <nav class="w-64 bg-blue-900 text-white p-5">
+                <h2 class="text-xl font-bold mb-6">Dance Group</h2>
+                <ul>
+                    <li class="mb-4"><a href="#" class="block py-2 px-4 hover:bg-blue-700 rounded">🏠 Dashboard</a></li>
+                    <li class="mb-4"><a href="#" class="block py-2 px-4 hover:bg-blue-700 rounded">📅 Training
+                            Sessions</a></li>
+                    <li class="mb-4"><a href="#" class="block py-2 px-4 hover:bg-blue-700 rounded">✅ Attendance</a></li>
+                    <li class="mb-4"><a href="#" class="block py-2 px-4 hover:bg-blue-700 rounded">📊 Performance
+                            Data</a></li>
+                    <li class="mb-4"><a href="#" class="block py-2 px-4 hover:bg-blue-700 rounded">⚕️ Injury Records</a>
+                    </li>
+                    <li class="mt-8"><a href="#" class="block py-2 px-4 bg-red-600 hover:bg-red-700 rounded">🚪
+                            Logout</a></li>
+                </ul>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="flex-1 p-6">
+                <!-- Navbar -->
+                <div class="flex justify-between items-center bg-white p-4 rounded-lg shadow">
+                    <h1 class="text-2xl font-bold">Dashboard</h1>
+                    <div class="flex items-center space-x-4">
+                        <span>👤 John Doe</span>
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded">Profile</button>
+                    </div>
+                </div>
+
+                <!-- Stats Section -->
+                <div class="grid grid-cols-3 gap-4 mt-6">
+                    <div class="bg-white p-4 shadow rounded-lg">
+                        <h3 class="text-lg font-semibold">📅 Upcoming Sessions</h3>
+                        <p class="text-xl font-bold">5</p>
+                    </div>
+                    <div class="bg-white p-4 shadow rounded-lg">
+                        <h3 class="text-lg font-semibold">🎭 Total Artists</h3>
+                        <p class="text-xl font-bold">50</p>
+                    </div>
+                    <div class="bg-white p-4 shadow rounded-lg">
+                        <h3 class="text-lg font-semibold">✅ Attendance Rate</h3>
+                        <p class="text-xl font-bold">85%</p>
+                    </div>
+                </div>
+
+                <!-- Recent Training Sessions -->
+                <div class="bg-white p-6 shadow rounded-lg mt-6">
+                    <h2 class="text-xl font-semibold mb-4">Recent Training Sessions</h2>
+                    <table class="w-full border-collapse">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th class="p-2 text-left">Date</th>
+                                <th class="p-2 text-left">Coach</th>
+                                <th class="p-2 text-left">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-t">
+                                <td class="p-2">Feb 20, 2025</td>
+                                <td class="p-2">Alice Smith</td>
+                                <td class="p-2 text-green-600">Completed</td>
+                            </tr>
+                            <tr class="border-t">
+                                <td class="p-2">Feb 22, 2025</td>
+                                <td class="p-2">Bob Johnson</td>
+                                <td class="p-2 text-yellow-600">Pending</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Attendance Chart Placeholder -->
+                <div class="bg-white p-6 shadow rounded-lg mt-6">
+                    <h2 class="text-xl font-semibold mb-4">Attendance Overview</h2>
+                    <div class="h-40 bg-gray-200 flex items-center justify-center text-gray-600">
+                        📊 Attendance Chart (Placeholder)
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </body>
+
+</html>

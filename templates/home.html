@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dancethology</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <style>
+            #banner {
+                width: 100%;
+                height: 360px;
+                object-fit: cover;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1 class="text-center mt-2 mb-4">{{group_name}}</h1>
+            <img class="img-fluid" id="banner"
+                src="https://plus.unsplash.com/premium_vector-1682298191538-5d1879cbe1f3?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="">
+            <h2 class="text-center mt-2 mb-4">About Dancethology</h2>
+            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere esse culpa consequatur,
+                dignissimos
+                placeateum ad fugit, beatae consectetur ab ut quibusdam nemo quasi veritatis voluptate necessitatibus
+                omnisaccusantium eligendi.</p>
+
+            <h2 class="text-center mt-2 mb-4">Training Sessions</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur repellat sunt praesentium
+                provident fugiat a totam consectetur quisquam voluptates nostrum, quis accusamus iure possimus magni ea
+                error itaque non cum?</p>
+            <div>
+                {% for session in sessions %}
+                {% include 'session_item.html' %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="text-center mt-4" style="text-align: center;">
+            <button type="button" class="btn btn-primary btn-lg">Logout</button>
+            <p>Copyright 2025, Trung Le Huu</p>
+        </div>
+
+    </body>
+
+</html>
