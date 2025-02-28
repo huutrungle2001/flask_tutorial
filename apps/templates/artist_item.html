@@ -1,0 +1,22 @@
+<div class="border-bottom row" style="margin-bottom: 16px; padding-bottom: 4px;">
+    <div class="col-8">
+        <h4 style="color:rgb(120,120,120); margin-bottom: 4px;">Artist {{ artist['id'] }}:
+            {{ artist['name'] }}
+        </h4>
+        <div>
+            <b>Email:</b> {{ artist['email'] }}
+        </div>
+        <div>
+            <b>Height:</b> {{ artist['height'] }} cm
+        </div>
+        <div>
+            <b>Weight:</b> {{ artist['weight'] }} kg
+        </div>
+        <div>
+            <b>Date of Birth:</b> {{ artist['dob'] }}
+        </div>
+    </div>
+    <div class="col-4" style="padding-right: 16px;">
+        <a href="mailto:{{ artist['email'] }}" type="button" class="btn btn-outline-primary">Contact</a>
+    </div>
+</div>

@@ -1,7 +1,16 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template
+from flask_login import LoginManager
+from flask_sqlalchemy import SQLAlchemy
+from importlib import import_module
+import os
 
-app = Flask(__name__)
+db = SQLAlchemy()
 
+basedir = os.path.abspath(os.path.dirname(__file__))
+DEBUG = True
+# This will create a file in <app> FOLDER
+SQLALCHEMY_DATABASE_URI = 'sqlite:///' + \
+    os.path.join(basedir, 'db.sqlite3')
 SESSIONS = [
     {
         "session_id": 1,
@@ -45,10 +54,21 @@ SESSIONS = [
     }
 ]
 
-@app.route('/')
-def hello():
-    return render_template('home.html', sessions=SESSIONS, group_name="Dancethology")
 
-@app.route('/sessions')
-def sessions_list():
-    return jsonify(SESSIONS)
+def register_blueprints(app):
+    for module_name in (
+        "home",
+    ):
+        module = import_module("apps.{}.routes".format(module_name))
+        app.register_blueprint(module.blueprint)
+
+def create_app():
+    app = Flask(__name__)
+    app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
+    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+
+    db.init_app(app)
+
+    register_blueprints(app)
+
+    return app

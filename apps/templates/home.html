@@ -12,38 +12,51 @@
                 width: 100%;
                 height: 360px;
                 object-fit: cover;
+                margin-bottom: 16px;
             }
         </style>
     </head>
 
     <body>
+        {% include 'nav.html' %}
+        <img class="img-fluid" id="banner" src="/static/banner.jpeg" alt="">
         <div class="container">
             <h1 class="text-center mt-2 mb-4">{{group_name}}</h1>
-            <img class="img-fluid" id="banner"
-                src="https://plus.unsplash.com/premium_vector-1682298191538-5d1879cbe1f3?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="">
-            <h2 class="text-center mt-2 mb-4">About Dancethology</h2>
-            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere esse culpa consequatur,
-                dignissimos
-                placeateum ad fugit, beatae consectetur ab ut quibusdam nemo quasi veritatis voluptate necessitatibus
-                omnisaccusantium eligendi.</p>
+            <div class="row" style="margin-bottom: 16px;">
+                <div class="col-md-6">
+                    <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere esse culpa
+                        consequatur,
+                        dignissimos
+                        placeateum ad fugit, beatae consectetur ab ut quibusdam nemo quasi veritatis voluptate
+                        necessitatibus
+                        omnisaccusantium eligendi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, esse
+                        expedita modi quo praesentium facere natus ducimus repellendus error quod inventore iste
+                        perferendis debitis cupiditate veniam, necessitatibus dignissimos, quia quisquam!
+                    </p>
+                </div>
+
+                <div class="d-none d-md-block col-md-6">
+                    <img src="/static/people.jpeg" alt="" style="height: 320px; border-radius: 4px;">
+
+                </div>
+            </div>
+
 
             <h2 class="text-center mt-2 mb-4">Training Sessions</h2>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur repellat sunt praesentium
                 provident fugiat a totam consectetur quisquam voluptates nostrum, quis accusamus iure possimus magni ea
                 error itaque non cum?</p>
             <div>
-                {% for session in sessions %}
-                {% include 'session_item.html' %}
+                {% for artist in artists %}
+                {% include 'artist_item.html' %}
                 {% endfor %}
             </div>
         </div>
 
         <div class="text-center mt-4" style="text-align: center;">
             <button type="button" class="btn btn-primary btn-lg">Logout</button>
-            <p>Copyright 2025, Trung Le Huu</p>
         </div>
-
+        {% include 'footer.html' %}
     </body>
 
 </html>
